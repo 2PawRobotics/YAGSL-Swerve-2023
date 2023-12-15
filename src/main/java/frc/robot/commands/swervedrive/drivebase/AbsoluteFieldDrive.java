@@ -72,7 +72,11 @@ public class AbsoluteFieldDrive extends CommandBase
     //                                       swerve.getSwerveDriveConfiguration());
     SmartDashboard.putNumber("LimitedTranslation", translation.getX());
     SmartDashboard.putString("Translation", translation.toString());
-    System.out.println(desiredSpeeds.toString());
+    SmartDashboard.putNumber("vX", vX.getAsDouble());
+    SmartDashboard.putNumber("vY", vY.getAsDouble());
+    SmartDashboard.putNumber("Rotation", heading.getAsDouble());
+
+
 
     // Make the robot move
     swerve.drive(translation, desiredSpeeds.omegaRadiansPerSecond, true);

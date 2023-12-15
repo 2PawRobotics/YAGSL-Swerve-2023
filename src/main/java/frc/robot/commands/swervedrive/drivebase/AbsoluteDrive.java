@@ -75,19 +75,19 @@ public class  AbsoluteDrive extends CommandBase
                                                          headingVertical.getAsDouble());
 
     // Prevent Movement After Auto
-    if(initRotation)
-    {
-      if(headingHorizontal.getAsDouble() == 0 && headingVertical.getAsDouble() == 0)
-      {
-        // Get the curretHeading
-        double firstLoopHeading = swerve.getHeading().getRadians();
+    // if(initRotation)
+    // {
+    //   if(headingHorizontal.getAsDouble() == 0 && headingVertical.getAsDouble() == 0)
+    //   {
+    //     // Get the curretHeading
+    //     double firstLoopHeading = swerve.getHeading().getRadians();
       
-        // Set the Current Heading to the desired Heading
-        desiredSpeeds = swerve.getTargetSpeeds(0, 0, Math.sin(firstLoopHeading), Math.cos(firstLoopHeading));
-      }
-      //Dont Init Rotation Again
-      initRotation = false;
-    }
+    //     // Set the Current Heading to the desired Heading
+    //     desiredSpeeds = swerve.getTargetSpeeds(0, 0, Math.sin(firstLoopHeading), Math.cos(firstLoopHeading));
+    //   }
+    //   //Dont Init Rotation Again
+    //   initRotation = false;
+    // }
 
     // Limit velocity to prevent tippy
     Translation2d translation = SwerveController.getTranslation2d(desiredSpeeds);
